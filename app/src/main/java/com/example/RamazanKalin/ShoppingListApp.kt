@@ -19,11 +19,15 @@ class ShoppingList {
 
     fun displayItem() {
         println("Your shopping list:")
-        for (item in items) {
-            if (item is Food) {
-                println("${item.name} ${item.price}$ ${item.weight}kg")
-            } else if (item is Cloth) {
-                println("${item.name} ${item.price}$ ${item.type}")
+        if (items.size == 0)
+            println("Your shopping list is empty!")
+        else {
+            for (item in items) {
+                if (item is Food) {
+                    println("${item.name} ${item.price}$ ${item.weight}kg")
+                } else if (item is Cloth) {
+                    println("${item.name} ${item.price}$ ${item.type}")
+                }
             }
         }
     }
